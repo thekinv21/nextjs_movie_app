@@ -16,6 +16,7 @@
 		"incremental": true,
 		"baseUrl": "./app",
 		"paths": {
+			"@/api/*": ["api/*"],
 			"@/assets/*": ["assets/*"],
 			"@/components/*": ["components/*"],
 			"@/layout/*": ["components/layout/*"],
@@ -26,7 +27,8 @@
 			"@/services/*": ["services/*"],
 			"@/shared/*": ["shared/*"],
 			"@/store/*": ["store/*"],
-			"@/utils/*": ["utils/*"]
+			"@/utils/*": ["utils/*"],
+			"@/providers/*": ["providers/*"]
 		},
 		"plugins": [
 			{
