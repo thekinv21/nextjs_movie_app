@@ -9,7 +9,7 @@
 	// search input style
 
 	> input {
-		@apply text-white placeholder:text-gray-600 block w-full bg-transparent outline-none text-sm;
+		@apply text-white placeholder:text-gray-600 block w-full bg-transparent text-sm outline-border-none;
 	}
 
 	// focus olduğunda üst componentden al veya alt componentden
