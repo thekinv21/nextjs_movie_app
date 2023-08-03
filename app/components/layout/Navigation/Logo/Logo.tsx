@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import Image from 'next/image'
 
-import LogoImage from '@/assets/images/logo.svg'
+import LogoImage from '@/assets/images/het.svg'
 
 const Logo: FC = () => {
 	return (
