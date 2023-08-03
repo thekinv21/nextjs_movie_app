@@ -1,7 +1,14 @@
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 import Layout from '@/components/layout/Layout'
+
 import { FC, PropsWithChildren } from 'react'
+
+import { Provider } from 'react-redux'
+
+import { store } from '@/store/store'
+import HeadProvider from './HeadProvider/HeadProvider'
+import ToastProvider from './ToastProvider'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -15,9 +22,20 @@ const queryClient = new QueryClient({
 
 const MainProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 	return (
-		<QueryClientProvider client={queryClient}>
-			<Layout>{children}</Layout>
-		</QueryClientProvider>
+		<HeadProvider>
+			<Provider store={store}>
+				{/*REACT QUERY PROVIDER */}
+
+				<QueryClientProvider client={queryClient}>
+					{/*REDUX TOASTR COMPONENT */}
+
+					<ToastProvider />
+
+					{/*CHILDRENS COMPONENT */}
+					<Layout>{children}</Layout>
+				</QueryClientProvider>
+			</Provider>
+		</HeadProvider>
 	)
 }
 
