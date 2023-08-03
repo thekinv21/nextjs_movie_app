@@ -1,0 +1,31 @@
+.button {
+	@apply btn-primary py-2 px-10;
+}
+
+.common {
+	@apply relative border-b border-gray-800 px-2 rounded-sm  transition-colors;
+
+	&:focus-within {
+		@apply border-primary;
+	}
+
+	> label {
+		@apply block;
+
+		> span {
+			@apply text-xs uppercase text-gray-600 block;
+		}
+	}
+}
+
+.field {
+	@apply text-left mb-12;
+
+	input {
+		@apply focus:ring-0 bg-transparent text-gray-500 w-full m-0 px-0 outline-border-none;
+	}
+}
+
+.error {
+	@apply absolute -bottom-6 left-0 text-xs w-full text-primary;
+}
