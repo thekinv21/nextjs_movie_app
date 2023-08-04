@@ -12,7 +12,7 @@ export const useAuthRedirect = () => {
 	const { query, push } = useRouter()
 
 	// eğer herhangi istek iççinde redirect geçerse main'e atar
-	const redirect = String(query.redirect) || '/'
+	const redirect = query.redirect ? String(query.redirect) : '/'
 
 	useEffect(() => {
 		// eğer user varsa istediği yere gitsin
