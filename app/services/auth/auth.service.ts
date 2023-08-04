@@ -9,6 +9,8 @@ import { IAuthResponse } from '@/store/user/user.interface'
 import { removeTokensStorage, saveToStorage } from './auth.helper'
 
 export const AuthService = {
+	// for register
+
 	async register(email: string, password: string) {
 		const response = await axios.post<IAuthResponse>(
 			`${API_URL}${getAuthUrl('register')}`,
@@ -24,6 +26,9 @@ export const AuthService = {
 
 		return response.data
 	},
+
+	// for login
+
 	async login(email: string, password: string) {
 		const response = await axios.post<IAuthResponse>(
 			`${API_URL}${getAuthUrl('login')}`,
@@ -39,10 +44,16 @@ export const AuthService = {
 
 		return response.data
 	},
+
+	// for logout
+
 	logout() {
 		removeTokensStorage()
 		localStorage.removeItem('user')
 	},
+
+	// for get a new Token
+
 	async getNewTokens() {
 		const refreshToken = Cookies.get('refreshToken')
 		const response = await axios.post<IAuthResponse>(

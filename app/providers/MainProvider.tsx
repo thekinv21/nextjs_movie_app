@@ -6,7 +6,9 @@ import { FC, PropsWithChildren } from 'react'
 
 import { Provider } from 'react-redux'
 
+import { TypeComponentAuthFields } from '@/shared/types/auth.interface'
 import { store } from '@/store/store'
+import AuthProvider from './AuthProvider/AuthProvider'
 import HeadProvider from './HeadProvider/HeadProvider'
 import ToastProvider from './ToastProvider'
 
@@ -20,7 +22,10 @@ const queryClient = new QueryClient({
 	}
 })
 
-const MainProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
+const MainProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
+	children,
+	Component
+}) => {
 	return (
 		<HeadProvider>
 			<Provider store={store}>
@@ -32,7 +37,9 @@ const MainProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 					<ToastProvider />
 
 					{/*CHILDRENS COMPONENT */}
-					<Layout>{children}</Layout>
+					<AuthProvider Component={Component}>
+						<Layout>{children}</Layout>
+					</AuthProvider>
 				</QueryClientProvider>
 			</Provider>
 		</HeadProvider>
