@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import SkeletonLoader from '@/components/ui/SkeletonLoader'
+import SkeletonLoader from '@/ui/skeleton-loader/SkeletonLoader'
 
 import { MovieService } from '@/services/movie.service'
 

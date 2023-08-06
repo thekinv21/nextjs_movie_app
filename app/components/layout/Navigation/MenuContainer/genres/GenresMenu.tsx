@@ -1,4 +1,4 @@
-import SkeletonLoader from '@/ui/SkeletonLoader'
+import SkeletonLoader from '@/ui/skeleton-loader/SkeletonLoader'
 import { FC } from 'react'
 import Menu from '../menu/Menu'
 import { usePopularGenres } from './usePopularGenres'

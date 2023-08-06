@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 import styles from './MoviesList.module.scss'
 
-import MaterialIcon from '@/components/ui/MaterialIcon'
+import MaterialIcon from '@/components/ui/icons/MaterialIcon'
 
 import { getGenresListEach } from '@/utils/movie/getGenresList'
 
