@@ -1,0 +1,31 @@
+.statisticts {
+	@apply flex items-stretch justify-around flex-wrap  mt-10 h-full;
+
+	.block {
+		@apply air-block w-4/5 shadow-xl;
+
+		&:hover {
+			@apply transition-all duration-200 ease-in-out;
+		}
+	}
+
+	.popular {
+		@apply text-center p-5;
+
+		img {
+			@apply rounded-layout shadow-lg image-like-bg h-72 w-full;
+		}
+
+		h2 {
+			@apply mb-1;
+		}
+
+		a {
+			@apply flex items-center justify-center;
+		}
+
+		h3 {
+			@apply opacity-50 font-medium text-sm mb-3;
+		}
+	}
+}
