@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@mantine/core": "^6.0.17",
+    "@mantine/hooks": "^6.0.17",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.4.3",
     "@types/react": "18.2.15",
@@ -36,7 +39,10 @@
     "@tailwindcss/forms": "^0.5.4",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/js-cookie": "^3.0.3",
+    "apexcharts": "^3.41.1",
+    "framer-motion": "^10.15.1",
     "nextjs-progressbar": "^0.0.16",
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.0",
+    "react-apexcharts": "^1.4.1"
   }
 }
