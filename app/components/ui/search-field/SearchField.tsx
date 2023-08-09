@@ -13,11 +13,7 @@ const SearchField: FC<ISearchField> = ({ searchTerm, handleSearch }) => {
 	return (
 		<div className={styles.search}>
 			<MaterialIcon name='MdSearch' />
-			<input
-				placeholder='Search Movie'
-				value={searchTerm}
-				onChange={handleSearch}
-			/>
+			<input placeholder='Search' value={searchTerm} onChange={handleSearch} />
 		</div>
 	)
 }

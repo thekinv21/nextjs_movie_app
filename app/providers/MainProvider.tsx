@@ -12,6 +12,8 @@ import AuthProvider from './AuthProvider/AuthProvider'
 import HeadProvider from './HeadProvider/HeadProvider'
 import ToastProvider from './ToastProvider'
 
+import { MantineProvider } from '@mantine/core'
+
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
@@ -27,22 +29,30 @@ const MainProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
 	Component
 }) => {
 	return (
-		<HeadProvider>
-			<Provider store={store}>
-				{/*REACT QUERY PROVIDER */}
+		<MantineProvider
+			withGlobalStyles
+			withNormalizeCSS
+			theme={{
+				colorScheme: 'dark'
+			}}
+		>
+			<HeadProvider>
+				<Provider store={store}>
+					{/*REACT QUERY PROVIDER */}
 
-				<QueryClientProvider client={queryClient}>
-					{/*REDUX TOASTR COMPONENT */}
+					<QueryClientProvider client={queryClient}>
+						{/*REDUX TOASTR COMPONENT */}
 
-					<ToastProvider />
+						<ToastProvider />
 
-					{/*CHILDRENS COMPONENT */}
-					<AuthProvider Component={Component}>
-						<Layout>{children}</Layout>
-					</AuthProvider>
-				</QueryClientProvider>
-			</Provider>
-		</HeadProvider>
+						{/*CHILDRENS COMPONENT */}
+						<AuthProvider Component={Component}>
+							<Layout>{children}</Layout>
+						</AuthProvider>
+					</QueryClientProvider>
+				</Provider>
+			</HeadProvider>
+		</MantineProvider>
 	)
 }
 
