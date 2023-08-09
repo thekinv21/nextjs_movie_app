@@ -54,7 +54,7 @@ const CountUsers: FC = () => {
 					offsetX: -2
 				},
 				height: 50,
-				offsetY: 20
+				offsetY: 5
 			},
 			plotOptions: {
 				pie: {

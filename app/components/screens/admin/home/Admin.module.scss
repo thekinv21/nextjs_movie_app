@@ -1,5 +1,5 @@
 .statisticts {
-	@apply flex items-stretch justify-around flex-wrap  mt-10 h-full;
+	@apply flex items-stretch justify-around flex-wrap  mt-10 h-full gap-y-5;
 
 	.block {
 		@apply air-block w-4/5 shadow-xl;
