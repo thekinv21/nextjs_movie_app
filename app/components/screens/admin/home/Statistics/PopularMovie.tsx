@@ -1,4 +1,4 @@
-import { MovieService } from '@/services/movie.service'
+import { MovieService } from '@/services/movies/movie.service'
 
 import { IMovie } from '@/shared/types/movie.types'
 
