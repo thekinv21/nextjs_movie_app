@@ -5,7 +5,7 @@ import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface'
 
 import { useDebounce } from '@/hooks/useDebounce'
 
-import { UserService } from '@/services/user.service'
+import { UserService } from '@/services/users/user.service'
 
 import { getAdminUrl } from '@/config/url.config'
 import { convertMongoDate } from '@/utils/date/converMongoDate'

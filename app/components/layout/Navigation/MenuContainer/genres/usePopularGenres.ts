@@ -1,6 +1,6 @@
 // backend'ten populer filmlerin kategori linklerini almak için
 
-import { GenreService } from '@/services/genre.service'
+import { GenreService } from '@/services/genres/genre.service'
 
 import { getGenreUrl } from '@/config/url.config'
 import { useQuery } from 'react-query'

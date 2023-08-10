@@ -1,10 +1,10 @@
 import { FC } from 'react'
 
-import { AdminService } from '@/services/admin.service'
+import { AdminService } from '@/services/admin/admin.service'
 
 import { useQuery } from 'react-query'
 
-import SkeletonLoader from '@/components/ui/skeleton-loader/SkeletonLoader'
+import SkeletonLoader from '@/ui/skeleton-loader/SkeletonLoader'
 
 import dynamic from 'next/dynamic'
 

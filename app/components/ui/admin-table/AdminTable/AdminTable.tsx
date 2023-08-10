@@ -49,7 +49,7 @@ const AdminTable: FC<IAdminTable> = ({
 							</div>
 						))
 					) : (
-						<div className={styles.notFound}>Users Not Found</div>
+						<div className={styles.notFound}>Not Found</div>
 					)}
 
 					<div className='flex justify-end items-center my-5'>

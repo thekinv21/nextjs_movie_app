@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { useDebounce } from '@/hooks/useDebounce'
-import { MovieService } from '@/services/movie.service'
+import { MovieService } from '@/services/movies/movie.service'
 import { useQuery } from 'react-query'
 
 export const useSearch = () => {

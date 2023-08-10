@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import SkeletonLoader from '@/ui/skeleton-loader/SkeletonLoader'
 
-import { MovieService } from '@/services/movie.service'
+import { MovieService } from '@/services/movies/movie.service'
 
 import { useQuery } from 'react-query'
 import MoviesList from '../movies-list/MoviesList'
