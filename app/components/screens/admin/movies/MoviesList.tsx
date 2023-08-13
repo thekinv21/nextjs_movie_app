@@ -12,7 +12,14 @@ import AdminTable from '@/components/ui/admin-table/AdminTable/AdminTable'
 import { useMovies } from './useMovies'
 
 const Movies: FC = () => {
-	const { handleSearch, searchTerm, data, isLoading, deleteAsync } = useMovies()
+	const {
+		handleSearch,
+		searchTerm,
+		data,
+		isLoading,
+		deleteAsync,
+		createAsync
+	} = useMovies()
 
 	return (
 		<Meta title='Admin || Movies'>
@@ -20,7 +27,11 @@ const Movies: FC = () => {
 
 			<Heading title='All Movies' />
 
-			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
+			<AdminHeader
+				handleSearch={handleSearch}
+				searchTerm={searchTerm}
+				onClick={createAsync}
+			/>
 
 			<AdminTable
 				tableItems={data || []}

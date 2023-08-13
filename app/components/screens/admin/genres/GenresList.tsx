@@ -12,7 +12,14 @@ import Heading from '@/ui/heading/Heading'
 import { useGenres } from './useGenres'
 
 const Genres: FC = () => {
-	const { handleSearch, searchTerm, data, isLoading, deleteAsync } = useGenres()
+	const {
+		handleSearch,
+		searchTerm,
+		data,
+		isLoading,
+		deleteAsync,
+		createAsync
+	} = useGenres()
 
 	return (
 		<Meta title='Admin || Genres'>
@@ -20,7 +27,11 @@ const Genres: FC = () => {
 
 			<Heading title='All Genres' />
 
-			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
+			<AdminHeader
+				handleSearch={handleSearch}
+				searchTerm={searchTerm}
+				onClick={createAsync}
+			/>
 
 			<AdminTable
 				tableItems={data || []}
