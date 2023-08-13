@@ -5,13 +5,16 @@ import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface'
 
 import { useDebounce } from '@/hooks/useDebounce'
 
-import { getActorUrl } from '@/config/url.config'
+import { getAdminUrl } from '@/config/url.config'
 import { ActorsService } from '@/services/actor/actor.service'
+import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 
 export const useActors = () => {
 	const [searchTerm, setSearchTerm] = useState('')
 	const debouncedSearch = useDebounce(searchTerm, 500)
+
+	const { push } = useRouter()
 
 	const queryData = useQuery(
 		['actors list', debouncedSearch],
@@ -21,7 +24,7 @@ export const useActors = () => {
 				data.map(
 					(actor): ITableItem => ({
 						_id: actor._id,
-						editUrl: getActorUrl(`/edit/${actor._id}`),
+						editUrl: getAdminUrl(`actor/edit/${actor._id}`),
 						items: [actor.name, actor.slug, `${actor.countMovies}`]
 					})
 				),
@@ -36,7 +39,7 @@ export const useActors = () => {
 	}
 
 	const { mutateAsync: deleteAsync } = useMutation(
-		'delete movies',
+		'delete actors',
 		(id: string) => ActorsService.deleteActor(id),
 		{
 			onError(error) {
@@ -48,14 +51,28 @@ export const useActors = () => {
 			}
 		}
 	)
+	const { mutateAsync: createAsync } = useMutation(
+		'create actor',
+		() => ActorsService.createActor(),
+		{
+			onError(error) {
+				toast.error('Error When Create Actors...')
+			},
+			onSuccess({ data: _id }) {
+				toast.success('Actor Created..')
+				push(getAdminUrl(`actor/edit/${_id}`))
+			}
+		}
+	)
 
 	return useMemo(
 		() => ({
 			handleSearch,
 			...queryData,
 			searchTerm,
-			deleteAsync
+			deleteAsync,
+			createAsync
 		}),
-		[queryData, searchTerm, deleteAsync]
+		[queryData, searchTerm, deleteAsync, createAsync]
 	)
 }

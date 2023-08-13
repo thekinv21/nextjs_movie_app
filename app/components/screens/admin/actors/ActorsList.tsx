@@ -10,8 +10,15 @@ import { useActors } from './useActors'
 import AdminHeader from '@/ui/admin-table/AdminHeader/AdminHeader'
 import AdminTable from '@/ui/admin-table/AdminTable/AdminTable'
 
-const Users: FC = () => {
-	const { handleSearch, searchTerm, data, isLoading, deleteAsync } = useActors()
+const Actors: FC = () => {
+	const {
+		handleSearch,
+		searchTerm,
+		data,
+		isLoading,
+		deleteAsync,
+		createAsync
+	} = useActors()
 
 	return (
 		<Meta title='Admin || Actors'>
@@ -19,7 +26,11 @@ const Users: FC = () => {
 
 			<Heading title='All Actors' />
 
-			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
+			<AdminHeader
+				onClick={createAsync}
+				handleSearch={handleSearch}
+				searchTerm={searchTerm}
+			/>
 
 			<AdminTable
 				tableItems={data || []}
@@ -31,4 +42,4 @@ const Users: FC = () => {
 	)
 }
 
-export default Users
+export default Actors
