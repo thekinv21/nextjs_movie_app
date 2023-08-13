@@ -5,24 +5,27 @@ import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface'
 
 import { useDebounce } from '@/hooks/useDebounce'
 
-import { getMoviesUrl } from '@/config/api.config'
+import { getAdminUrl } from '@/config/url.config'
 import { MovieService } from '@/services/movies/movie.service'
 import { getGenresList } from '@/utils/movie/getGenresList'
+import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 
 export const useMovies = () => {
 	const [searchTerm, setSearchTerm] = useState('')
 	const debouncedSearch = useDebounce(searchTerm, 500)
 
+	const { push } = useRouter()
+
 	const queryData = useQuery(
-		['actors list', debouncedSearch],
+		['movie list', debouncedSearch],
 		() => MovieService.getAll(debouncedSearch),
 		{
 			select: ({ data }) =>
 				data.map(
 					(movie): ITableItem => ({
 						_id: movie._id,
-						editUrl: getMoviesUrl(`/edit/${movie._id}`),
+						editUrl: getAdminUrl(`movie/edit/${movie._id}`),
 						items: [
 							movie.title,
 							getGenresList(movie.genres),
@@ -54,13 +57,28 @@ export const useMovies = () => {
 		}
 	)
 
+	const { mutateAsync: createAsync } = useMutation(
+		'create genres',
+		() => MovieService.createMovie(),
+		{
+			onError(error) {
+				toast.error('Error When Create Movie...')
+			},
+			onSuccess({ data: _id }) {
+				toast.success('Movie Created..')
+				push(getAdminUrl(`movie/edit/${_id}`))
+			}
+		}
+	)
+
 	return useMemo(
 		() => ({
 			handleSearch,
 			...queryData,
 			searchTerm,
-			deleteAsync
+			deleteAsync,
+			createAsync
 		}),
-		[queryData, searchTerm, deleteAsync]
+		[queryData, searchTerm, deleteAsync, createAsync]
 	)
 }

@@ -5,13 +5,16 @@ import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface'
 
 import { useDebounce } from '@/hooks/useDebounce'
 
-import { getGenresUrl } from '@/config/api.config'
+import { getAdminUrl } from '@/config/url.config'
 import { GenreService } from '@/services/genres/genre.service'
+import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 
 export const useGenres = () => {
 	const [searchTerm, setSearchTerm] = useState('')
 	const debouncedSearch = useDebounce(searchTerm, 500)
+
+	const { push } = useRouter()
 
 	const queryData = useQuery(
 		['genres list', debouncedSearch],
@@ -21,7 +24,7 @@ export const useGenres = () => {
 				data.map(
 					(genre): ITableItem => ({
 						_id: genre._id,
-						editUrl: getGenresUrl(`/edit/${genre._id}`),
+						editUrl: getAdminUrl(`genre/edit/${genre._id}`),
 						items: [genre.name, genre.slug]
 					})
 				),
@@ -48,14 +51,28 @@ export const useGenres = () => {
 			}
 		}
 	)
+	const { mutateAsync: createAsync } = useMutation(
+		'create genres',
+		() => GenreService.create(),
+		{
+			onError(error) {
+				toast.error('Error When Create Genres...')
+			},
+			onSuccess({ data: _id }) {
+				toast.success('Genre Created..')
+				push(getAdminUrl(`genre/edit/${_id}`))
+			}
+		}
+	)
 
 	return useMemo(
 		() => ({
 			handleSearch,
 			...queryData,
 			searchTerm,
-			deleteAsync
+			deleteAsync,
+			createAsync
 		}),
-		[queryData, searchTerm, deleteAsync]
+		[queryData, searchTerm, deleteAsync, createAsync]
 	)
 }
