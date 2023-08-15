@@ -46,7 +46,7 @@ export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 	// update function
 
 	const { mutateAsync } = useMutation(
-		'update actor',
+		'update movie',
 		(data: IMovieEditInput) => MovieService.updateMovie(movieId, data),
 		{
 			onError: error => {
