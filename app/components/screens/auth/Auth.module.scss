@@ -1,0 +1,21 @@
+.wrapper {
+	@apply mt-32 min-w-[868px] max-w-[100vw];
+
+	> form {
+		@apply mx-auto w-[40%] air-block bg-opacity-90 p-7 text-center overflow-hidden;
+
+		.buttons {
+			@apply mt-12 shadow-lg flex items-center justify-center gap-x-10;
+
+			> button {
+				&:first-child {
+				}
+
+				&:last-child {
+					@apply opacity-60 hover:opacity-100 transition-opacity;
+					background-color: '#8f0501';
+				}
+			}
+		}
+	}
+}
