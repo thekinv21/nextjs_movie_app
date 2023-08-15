@@ -51,7 +51,11 @@ Lütfen bu projenin `clean code kurallarına` uyun.
   
 ## Proje İçeriği Görüntüleri
 
+![home](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/c0c15669-e121-46c1-b811-cc04b6edd6c5)
+
 ![movie-page](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/1c23934d-d2d3-4678-b635-6d2ba35b793a)
+
+![admi stat](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/482db8e4-64ab-417c-bc39-87b21cb0469d)
 
 ![admin-edit](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/867e6a43-87b7-447e-9144-d3b7ea70e6fb)
 
@@ -61,13 +65,11 @@ Lütfen bu projenin `clean code kurallarına` uyun.
 
 ![admin-list](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/d5b7dc23-5997-4663-bdb2-a649d1117607)
 
-![admin-stat](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/8f5f09e2-183e-47e8-b10f-f7b367a81729)
 
 ![discovery](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/4005f99f-ba08-45c1-a268-afb6fca210b1)
 
 ![fresh-movies](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/80f14c6b-5661-4464-94b9-0fba7ce7b2c6)
 
-![home](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/c0c15669-e121-46c1-b811-cc04b6edd6c5)
 
 ![movie-page-not-auth](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/34fab17c-bc6c-461f-b6c3-44b8a1854ed3)
 
