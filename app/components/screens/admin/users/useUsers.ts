@@ -9,11 +9,14 @@ import { UserService } from '@/services/users/user.service'
 
 import { getAdminUrl } from '@/config/url.config'
 import { convertMongoDate } from '@/utils/date/converMongoDate'
+import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 
 export const useUsers = () => {
 	const [searchTerm, setSearchTerm] = useState('')
 	const debouncedSearch = useDebounce(searchTerm, 500)
+
+	const { push } = useRouter()
 
 	const queryData = useQuery(
 		['user list', debouncedSearch],
@@ -50,14 +53,28 @@ export const useUsers = () => {
 			}
 		}
 	)
+	const { mutateAsync: createAsync } = useMutation(
+		'create user',
+		() => UserService.createUser(),
+		{
+			onError(error) {
+				toast.error('Error When Create User...')
+			},
+			onSuccess({ data: _id }) {
+				toast.success('User Created..')
+				push(getAdminUrl(`user/edit/${_id}`))
+			}
+		}
+	)
 
 	return useMemo(
 		() => ({
 			handleSearch,
 			...queryData,
 			searchTerm,
-			deleteAsync
+			deleteAsync,
+			createAsync
 		}),
-		[queryData, searchTerm, deleteAsync]
+		[queryData, searchTerm, deleteAsync, createAsync]
 	)
 }
