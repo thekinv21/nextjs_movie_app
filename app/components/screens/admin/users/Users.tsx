@@ -11,7 +11,14 @@ import AdminTable from '@/components/ui/admin-table/AdminTable/AdminTable'
 import { useUsers } from './useUsers'
 
 const Users: FC = () => {
-	const { handleSearch, searchTerm, isLoading, data, deleteAsync } = useUsers()
+	const {
+		handleSearch,
+		searchTerm,
+		isLoading,
+		data,
+		deleteAsync,
+		createAsync
+	} = useUsers()
 
 	return (
 		<Meta title='Admin || Users'>
@@ -19,7 +26,11 @@ const Users: FC = () => {
 
 			<Heading title='All Users Data' />
 
-			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
+			<AdminHeader
+				handleSearch={handleSearch}
+				searchTerm={searchTerm}
+				// onClick={createAsync}
+			/>
 
 			<AdminTable
 				tableItems={data || []}
