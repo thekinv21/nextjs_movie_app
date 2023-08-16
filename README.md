@@ -59,4 +59,9 @@ Lütfen bu projenin `clean code kurallarına` uyun.
 
 ![Ekran görüntüsü 2023-08-15 204249](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/0fd453c0-0d1c-498e-8a8d-b3221fa1c220)
 
+![resh](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/adc42cfc-0ca5-4afd-8a6b-2a00986064be)
+
+![tre](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/72e9546c-2e00-4036-a505-36319fb49e12)
+
+
   
