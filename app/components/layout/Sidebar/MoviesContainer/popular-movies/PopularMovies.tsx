@@ -4,13 +4,23 @@ import SkeletonLoader from '@/ui/skeleton-loader/SkeletonLoader'
 
 import { MovieService } from '@/services/movies/movie.service'
 
+import { getRandoms } from '@/utils/helper/randomElements'
 import { useQuery } from 'react-query'
 import MoviesList from '../movies-list/MoviesList'
 
 const PopularMovies: FC = () => {
 	const { data: popularMovies, isLoading } = useQuery(
 		['Get Popular movies in sidebar'],
-		() => MovieService.getPopularMovies()
+		() => MovieService.getPopularMovies(),
+		{
+			select: data => {
+				const randomPopulars = [...data]
+
+				getRandoms(randomPopulars)
+
+				return randomPopulars.slice(0, 4)
+			}
+		}
 	)
 
 	return isLoading ? (
