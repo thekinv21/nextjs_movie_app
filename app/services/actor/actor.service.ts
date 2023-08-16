@@ -1,4 +1,4 @@
-import { axiosInstance } from '@/api/interceptors'
+import { axiosClassic, axiosInstance } from '@/api/interceptors'
 import { getActorsUrl, getActorsUrls } from '@/config/api.config'
 import { IActorEditInput } from '@/screens/admin/actor/actor-edit.interface'
 import { IActors } from '@/shared/types/movie.types'
@@ -32,5 +32,11 @@ export const ActorsService = {
 
 	async deleteActor(_id: string) {
 		return axiosInstance.delete<string>(getActorsUrl(`/${_id}`))
+	},
+
+	// get actors by  actor
+
+	async getBySlug(slug: string) {
+		return axiosClassic.get<IActors>(getActorsUrl(`/by-slug/${slug}`))
 	}
 }
