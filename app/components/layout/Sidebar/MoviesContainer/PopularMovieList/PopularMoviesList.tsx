@@ -1,14 +1,15 @@
 import { FC } from 'react'
+import { useQuery } from 'react-query'
 
 import SkeletonLoader from '@/ui/skeleton-loader/SkeletonLoader'
 
 import { MovieService } from '@/services/movies/movie.service'
 
 import { getRandoms } from '@/utils/helper/randomElements'
-import { useQuery } from 'react-query'
-import MoviesList from '../movies-list/MoviesList'
 
-const PopularMovies: FC = () => {
+import MoviesList from '../MoviesList'
+
+const PopularMoviesList: FC = () => {
 	const { data: popularMovies, isLoading } = useQuery(
 		['Get Popular movies in sidebar'],
 		() => MovieService.getPopularMovies(),
@@ -18,7 +19,7 @@ const PopularMovies: FC = () => {
 
 				getRandoms(randomPopulars)
 
-				return randomPopulars.slice(0, 4)
+				return randomPopulars.slice(0, 5)
 			}
 		}
 	)
@@ -30,10 +31,10 @@ const PopularMovies: FC = () => {
 	) : (
 		<MoviesList
 			link='/trending'
-			movies={popularMovies || []}
+			movies={popularMovies?.slice(0, 5) || []}
 			title='Popular Movies'
 		/>
 	)
 }
 
-export default PopularMovies
+export default PopularMoviesList

@@ -1,11 +1,15 @@
-import { errorCatch } from '@/api/api.helpers'
-import { getAdminUrl } from '@/config/url.config'
-import { ActorsService } from '@/services/actor/actor.service'
-import { getKeys } from '@/utils/object/getKeys'
 import { useRouter } from 'next/router'
 import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toast } from 'react-toastify'
+
+import { getAdminUrl } from '@/config/url.config'
+
+import { ActorsService } from '@/services/actor/actor.service'
+
+import { getKeys } from '@/utils/object/getKeys'
+
+import { errorCatch } from '@/api/api.helpers'
 import { IActorEditInput } from './actor-edit.interface'
 
 // buarada setValue vermemizin sebebi , editlemek istediğimiz genrenin değerleri inputlarımızda yazılı olması için kullacağız
