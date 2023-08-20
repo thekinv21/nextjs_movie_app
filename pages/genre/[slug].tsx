@@ -1,14 +1,11 @@
-import { IGenrePage } from '@/components/screens/genre/genre.interace'
-import Genre from '@/screens/genre/Genre'
-import { GenreService } from '@/services/genres/genre.service'
-import { MovieService } from '@/services/movies/movie.service'
-import { IGenre, IMovie } from '@/shared/types/movie.types'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-export interface IGenrePageProps {
-	movies: IMovie[]
-	genre: IGenre | undefined
-}
+import { IGenrePage } from '@/components/screens/genre/genre.interace'
+
+import Genre from '@/screens/genre/Genre'
+
+import { GenreService } from '@/services/genres/genre.service'
+import { MovieService } from '@/services/movies/movie.service'
 
 const GenrePage: NextPage<IGenrePage> = ({ movies, genre }) => {
 	return genre ? <Genre genre={genre} movies={movies} /> : <div>Not found</div>

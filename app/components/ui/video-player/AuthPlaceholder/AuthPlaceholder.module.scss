@@ -1,0 +1,15 @@
+.placeholder {
+	@apply flex absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-70 flex-col justify-center gap-y-2;
+
+	> div {
+		@apply m-auto text-center;
+
+		> div {
+			@apply text-white text-lg mb-5;
+		}
+	}
+}
+
+.btn {
+	@apply btn-primary py-2 px-7 text-sm text-center;
+}

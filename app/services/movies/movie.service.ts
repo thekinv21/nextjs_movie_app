@@ -1,7 +1,10 @@
-import { axiosClassic, axiosInstance } from '@/api/interceptors'
-import { getMoviesUrl, getMoviesUrls } from '@/config/api.config'
 import { IMovieEditInput } from '@/screens/admin/movie/movie-edit.interface'
+
+import { getMoviesUrl, getMoviesUrls } from '@/config/api.config'
+
 import { IMovie } from '@/shared/types/movie.types'
+
+import { axiosClassic, axiosInstance } from '@/api/interceptors'
 
 export const MovieService = {
 	// all movies service
@@ -55,5 +58,17 @@ export const MovieService = {
 
 	async getByActor(actorId: string) {
 		return axiosClassic.get<IMovie>(getMoviesUrl(`/by-actor/${actorId}`))
+	},
+
+	// get by slug
+	async getBySlug(slug: string) {
+		return axiosClassic.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`))
+	},
+
+	// update count opened
+	async updateCountOpened(slug: string) {
+		return axiosClassic.post(getMoviesUrl('/update-count-opened'), {
+			slug
+		})
 	}
 }
