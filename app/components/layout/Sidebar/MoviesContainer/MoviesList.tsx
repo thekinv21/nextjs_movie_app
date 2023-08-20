@@ -13,7 +13,7 @@ const MoviesList: FC<IMovieList> = ({ link, title, movies }) => {
 			{movies.length ? (
 				movies.map(movie => <MovieItem key={movie._id} movie={movie} />)
 			) : (
-				<div className=' my-6 py-3 px-4 rounded-lg bg-gray-800 text-center text-white text-sm'>
+				<div className=' my-3 py-3 px-4 rounded-lg bg-gray-800 text-center text-white text-sm'>
 					Not Found..
 				</div>
 			)}

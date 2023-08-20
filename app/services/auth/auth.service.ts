@@ -50,6 +50,7 @@ export const AuthService = {
 	logout() {
 		removeTokensStorage()
 		localStorage.removeItem('user')
+		window.location.href = '/auth'
 	},
 
 	// for get a new Token
