@@ -28,6 +28,9 @@
 
 * Frontend ve Backendi klonla
  * MongoDb kurulu olması şart
+ * MongoDb kurulu olması ve  database doldurman gerekecek
+ * MongoDb compass kullanabilirsin
+ * Admin : test@test.ru 123456
  * env dosya oluşturup, MongoDb port vs belirlemelisin
  
 * env örnek :
@@ -51,23 +54,23 @@ Lütfen bu projenin `clean code kurallarına` uyun.
   
 ## Proje İçeriği Görüntüleri
 
+![movie page](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/dbb9bc8e-933e-44fa-b792-3ab65060271b)
 
-![anasaya](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/d9da0e3a-ac4a-4f88-805a-ac99bf2af467)
+![home](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/97e6d2f4-520e-4279-898b-0963abd93114)
 
-![Ekran Alıntısı](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/f4995e99-38f3-49a1-b931-9ee77b4025b6)
+![av](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/162edaed-c6c6-4faa-8893-fed78fe53495)
 
-![admi stat](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/482db8e4-64ab-417c-bc39-87b21cb0469d)
+![trending](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/ce53b53a-702e-43db-a598-7f4fe94733a6)
 
-![resh](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/adc42cfc-0ca5-4afd-8a6b-2a00986064be)
+![stats](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/b4b6e243-1ba0-4542-9f4d-7f3a60d75b9f)
 
-![tre](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/72e9546c-2e00-4036-a505-36319fb49e12)
+![new](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/4dd2cbe3-48de-4440-99d4-b20615daeb78)
 
-![table](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/23985b8c-81bf-4206-b409-32611a506ed0)
+![movie update](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/cd327c5c-d3ca-45a8-8abc-5108ec926ed5)
 
-![Ekran görüntüsü 2023-08-15 204249](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/0fd453c0-0d1c-498e-8a8d-b3221fa1c220)
+![actor edit](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/4f7705f8-3fc1-46b0-b7df-7f22f1eee56a)
 
-
-
+![auth](https://github.com/thekinv21/nextjs_movie_app/assets/92122363/58542233-d949-4b49-b62d-219095e6e8bf)
 
 
   
