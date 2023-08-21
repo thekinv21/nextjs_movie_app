@@ -52,12 +52,12 @@ export const UserService = {
 	// get facorites
 
 	async getFavorites() {
-		return axiosInstance.get<IMovie[]>(getUsersUrl(`/profile/favorites`))
+		return axiosInstance.get<IMovie[]>(getUsersUrl('/profile/favorites'))
 	},
 
 	// toggle favorite
 	async toggleFavorite(movieId: string) {
-		return axiosInstance.put<string>(getUsersUrl(`/profile/favorites`), {
+		return axiosInstance.post<string>(getUsersUrl(`/profile/favorites`), {
 			movieId
 		})
 	}

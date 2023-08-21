@@ -1,20 +1,18 @@
+import { useRouter } from 'next/router'
 import { FC, MouseEvent } from 'react'
 
-import { useActions } from '@/hooks/useActions'
-
 import MaterialIcon from '@/ui/icons/MaterialIcon'
-import { useRouter } from 'next/router'
+
+import { useActions } from '@/hooks/useActions'
 
 const LogoutButton: FC = () => {
 	const { logout } = useActions()
 
-	const { replace } = useRouter()
+	const { replace, push } = useRouter()
 
 	const logoutHandler = (e: MouseEvent<HTMLAnchorElement>) => {
 		e.preventDefault()
 		logout()
-
-		replace('/auth')
 	}
 
 	return (

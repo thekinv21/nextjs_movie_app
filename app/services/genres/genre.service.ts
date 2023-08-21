@@ -1,15 +1,17 @@
+import { IGenreEditInput } from '@/screens/admin/genre/genre-edit.interface'
+
 import { getGenresUrl, getGenresUrls } from '@/config/api.config'
+
 import { IGenre } from '@/shared/types/movie.types'
 
 import { axiosClassic, axiosInstance } from '@/api/interceptors'
-import { IGenreEditInput } from '@/screens/admin/genre/genre-edit.interface'
 
 export const GenreService = {
 	// get gpopular genres
 
 	//ilk önce api configi yaratmalısın config>apiConfig
 
-	// döndğüreceği değerleri vermeyi unutma
+	//* döndğüreceği değerleri vermeyi unutma
 
 	async getPopular(limit: number = 4) {
 		return axiosClassic.get<IGenre[]>(getGenresUrl('popular'), {
@@ -19,7 +21,7 @@ export const GenreService = {
 		})
 	},
 
-	// get all genres
+	//*get all genres
 
 	async getAll(searchTerm?: string) {
 		return axiosClassic.get<IGenre[]>(getGenresUrls(), {
@@ -27,28 +29,29 @@ export const GenreService = {
 		})
 	},
 
-	//get genre by id
+	//*get genre by id
 
 	async getById(_id: string) {
 		return axiosInstance.get<IGenreEditInput>(getGenresUrl(`${_id}`))
 	},
 
-	// create genre
+	//* create genre
 
 	async create() {
 		return axiosInstance.post<string>(getGenresUrl(''))
 	},
-	//  edit genre
+	//*  edit genre
 
 	async updateGenre(_id: string, data: IGenreEditInput) {
 		return axiosInstance.put<string>(getGenresUrl(`/${_id}`), data)
 	},
 
-	// delete genre
+	//* delete genre
 	async deleteGenres(_id: string) {
 		return axiosInstance.delete<string>(getGenresUrl(`${_id}`))
 	},
 
+	//* get genre by slug
 	async getBySlug(slug: string) {
 		return axiosClassic.get<IGenre>(getGenresUrl(`by-slug/${slug}`))
 	}

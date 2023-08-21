@@ -9,18 +9,18 @@ export const navItems: INavItem[] = [
 	},
 	{
 		title: 'Users',
-		link: getAdminUrl('users/users')
+		link: getAdminUrl('users')
 	},
 	{
 		title: 'Movies',
-		link: getAdminUrl('movies/movies')
+		link: getAdminUrl('movies')
 	},
 	{
 		title: 'Actors',
-		link: getAdminUrl('actors/actors')
+		link: getAdminUrl('actors')
 	},
 	{
 		title: 'Genres',
-		link: getAdminUrl('genres/genres')
+		link: getAdminUrl('genres')
 	}
 ]

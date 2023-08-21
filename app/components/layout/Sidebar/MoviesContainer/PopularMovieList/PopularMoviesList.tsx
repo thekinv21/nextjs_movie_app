@@ -19,7 +19,7 @@ const PopularMoviesList: FC = () => {
 
 				getRandoms(randomPopulars)
 
-				return randomPopulars.slice(0, 5)
+				return randomPopulars.slice(0, 2)
 			}
 		}
 	)
@@ -31,7 +31,7 @@ const PopularMoviesList: FC = () => {
 	) : (
 		<MoviesList
 			link='/trending'
-			movies={popularMovies?.slice(0, 5) || []}
+			movies={popularMovies?.slice(0, 2) || []}
 			title='Popular Movies'
 		/>
 	)

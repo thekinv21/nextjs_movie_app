@@ -9,11 +9,6 @@ export const firstMenu: IMenu = {
 			link: '/'
 		},
 		{
-			icon: 'MdExplore',
-			title: 'Genres',
-			link: '/discovery'
-		},
-		{
 			icon: 'MdRefresh',
 			title: 'Fresh Movies',
 			link: '/fresh'
