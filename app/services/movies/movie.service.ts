@@ -7,14 +7,14 @@ import { IMovie } from '@/shared/types/movie.types'
 import { axiosClassic, axiosInstance } from '@/api/interceptors'
 
 export const MovieService = {
-	// all movies service
+	//* all movies service
 
 	async getAll(searchTerm?: string) {
 		return axiosClassic.get<IMovie[]>(getMoviesUrls(), {
 			params: searchTerm ? { searchTerm } : {}
 		})
 	},
-	// get Popular movies
+	//* get Popular movies
 	async getPopularMovies() {
 		const { data: movies } = await axiosClassic.get<IMovie[]>(
 			getMoviesUrl('most-popular')
@@ -23,25 +23,25 @@ export const MovieService = {
 		return movies
 	},
 
-	// create Movies
+	//* create Movies
 
 	async createMovie() {
 		return axiosInstance.post<string>(getMoviesUrl(''))
 	},
 
-	// update movie
+	//* update movie
 
 	async updateMovie(_id: string, data: IMovieEditInput) {
 		return axiosInstance.put<string>(getMoviesUrl(`/${_id}`), data)
 	},
 
-	// delete movies
+	//* delete movies
 
 	async deleteMovies(_id: string) {
 		return axiosInstance.delete<string>(getMoviesUrl(`/${_id}`))
 	},
 
-	// get ById movie
+	//* get ById movie
 
 	async getById(_id: string) {
 		return axiosInstance.get<IMovie>(getMoviesUrl(`/${_id}`))
@@ -65,7 +65,7 @@ export const MovieService = {
 		return axiosClassic.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`))
 	},
 
-	// update count opened
+	//* update count opened
 	async updateCountOpened(slug: string) {
 		return axiosClassic.post(getMoviesUrl('/update-count-opened'), {
 			slug
